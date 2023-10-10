@@ -1,38 +1,49 @@
-.App {
+table {
+  width: 100%;
+  border-collapse: collapse; /* Remove spacing between cells */
+  margin-top: 20px;
+  border-radius: 10px; /* Add a border-radius for a slight curve */
+  border: 1px solid rgba(46, 43, 43, 0.178); /* Add a border around the table */
+}
+
+/* Style for table head cells */
+th {
+  padding: 12px 15px;
+  text-align: left;
+  border: 1px solid rgba(46, 43, 43, 0.178); /* Add borders around table head cells */
+  background-color: rgba(223, 209, 209, 0.185); /* Transparent white background */
+}
+
+/* Style for table content cells */
+td {
+  padding: 20px 17px;
+  text-align: left;
+  border: 1px solid rgba(46, 43, 43, 0.26); /* Add borders around table content cells */
+}
+
+/* Style for the table header */
+h1 {
+  font-size: 24px;
+  color: black;
   text-align: center;
+  padding: 65px;
+  margin-top: 20px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Style for the popup */
+p {
+  font-size: 16px;
+  color: rgb(3, 5, 5);
+  text-align: justify;
+  margin-top: 20px;
+  padding: 8px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Background gradient for the body */
+body {
+  background: -webkit-linear-gradient(left, #6cb3c083, #4bb9a16b);
+  background: linear-gradient(to right, #2592c48a, #25c47586);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
 }
