@@ -79,7 +79,7 @@ const handleCloseModal = () => {
         <tbody>
           {Customers.map((customer) => (
             <tr 
-            key= {customer.id}
+            key= {customer.id} className='table-row'
             onClick={() => handleTableRowClick(customer)} //handles row click event
             >
 

@@ -1,24 +1,52 @@
+/* Background gradient for the body */
+body {
+  background: linear-gradient(to right, #2592c4, #25c475);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the table */
 table {
   width: 100%;
-  border-collapse: collapse; /* Remove spacing between cells */
+  border-collapse: collapse;
   margin-top: 20px;
-  border-radius: 10px; /* Add a border-radius for a slight curve */
-  border: 1px solid rgba(46, 43, 43, 0.178); /* Add a border around the table */
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* Style for table rows (excluding the table head) */
+tr:not(:first-child) {
+  transition: border-color 0.5s;
+}
+
+/* Hover effect for rows (excluding the table head) */
+.table-row:hover{
+  border-bottom: 1px solid rgba(8, 247, 247, 0.247);
+}
+
+/* Style for table rows (including the table head) )horizontal lines */
+tr {
+  transition: border-color 0.1s;
+  border-bottom: 1px solid rgba(88, 97, 96, 0.171);
+  border-top: 1px solid rgba(88, 97, 96, 0.171);
 }
 
 /* Style for table head cells */
 th {
   padding: 12px 15px;
-  text-align: left;
-  border: 1px solid rgba(46, 43, 43, 0.178); /* Add borders around table head cells */
-  background-color: rgba(223, 209, 209, 0.185); /* Transparent white background */
+  text-align: justify;
+  border: 1px solid rgba(10, 90, 86, 0.199);
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0, 0, 0, 0.267);
 }
 
 /* Style for table content cells */
 td {
   padding: 20px 17px;
-  text-align: left;
-  border: 1px solid rgba(46, 43, 43, 0.26); /* Add borders around table content cells */
+  text-align: justify;
+  border: none;
 }
 
 /* Style for the table header */
@@ -26,24 +54,16 @@ h1 {
   font-size: 24px;
   color: black;
   text-align: center;
-  padding: 65px;
+  padding: 20px;
   margin-top: 20px;
+  font-family: sans-serif;
 }
 
 /* Style for the popup */
 p {
   font-size: 16px;
-  color: rgb(3, 5, 5);
+  color: #030505;
   text-align: justify;
   margin-top: 20px;
   padding: 8px;
-}
-
-/* Background gradient for the body */
-body {
-  background: -webkit-linear-gradient(left, #6cb3c083, #4bb9a16b);
-  background: linear-gradient(to right, #2592c48a, #25c47586);
-  font-family: 'Roboto', sans-serif;
-  margin: 0;
-  padding: 0;
 }
