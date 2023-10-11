@@ -24,7 +24,7 @@ function Task2() {
     {
       id: 3,
       name: "Sa de Vinci",
-      age: 40,
+      age: 42,
       contact: "010-234-2345",
       address: "GM 390 St",
     },
