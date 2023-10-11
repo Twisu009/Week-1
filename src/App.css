@@ -1,38 +1,69 @@
-.App {
+/* Background gradient for the body */
+body {
+  background: linear-gradient(to right, #2592c4, #25c475);
+  font-family: 'Roboto', sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+/* Style for the table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  border-radius: 10px;
+  background-color: transparent;
+}
+
+/* Style for table rows (excluding the table head) */
+tr:not(:first-child) {
+  transition: border-color 0.5s;
+}
+
+/* Hover effect for rows (excluding the table head) */
+.table-row:hover{
+  border-bottom: 1px solid rgba(8, 247, 247, 0.247);
+}
+
+/* Style for table rows (including the table head) )horizontal lines */
+tr {
+  transition: border-color 0.1s;
+  border-bottom: 1px solid rgba(88, 97, 96, 0.171);
+  border-top: 1px solid rgba(88, 97, 96, 0.171);
+}
+
+/* Style for table head cells */
+th {
+  padding: 12px 15px;
+  text-align: justify;
+  border: 1px solid rgba(10, 90, 86, 0.199);
+  border-left: none;
+  border-right: none;
+  background-color: rgba(0, 0, 0, 0.267);
+}
+
+/* Style for table content cells */
+td {
+  padding: 20px 17px;
+  text-align: justify;
+  border: none;
+}
+
+/* Style for the table header */
+h1 {
+  font-size: 24px;
+  color: black;
   text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  font-family: sans-serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+/* Style for the popup */
+p {
+  font-size: 16px;
+  color: #030505;
+  text-align: justify;
+  margin-top: 20px;
+  padding: 8px;
 }
