@@ -1,5 +1,6 @@
 //Defining Customer Interface
 export interface Types {
+  handleFollowChange: (id: number) => void;
   customer: Customer
   
   
@@ -13,4 +14,5 @@ export interface Customer {
   age: number;
   contact: string;
   address: string;
+  isFollowing: boolean;
 };
