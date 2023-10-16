@@ -12,7 +12,7 @@ table {
 /* Styles for the table content */
 .tbl-content {
   height: 300px;
-  overflow-x: auto;
+  overflow-x: auto; /*adding scroll-behavior*/
   margin-top: 0px;
   border: 1px solid rgba(211, 211, 211, 0.3);
 }
@@ -60,3 +60,11 @@ p {
   font-size: 18px; /* Increase font size for better readability in the modal */
   color: #000000; /* Set text color to black for better visibility */
 }
+
+/* .create-button{
+  background-color: rgb(47, 255, 220);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: white;
+} */

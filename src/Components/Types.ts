@@ -6,7 +6,7 @@ export interface Types {
   
   open?: boolean;
   onCancel?: () => void;
-}
+};
 
 export interface Customer {
   id: number;
@@ -16,3 +16,10 @@ export interface Customer {
   address: string;
   isFollowing: boolean;
 };
+
+// export interface Customer4 {
+//   id: number;
+//   name: string;
+//   contact: string;
+//   address: string;
+// };

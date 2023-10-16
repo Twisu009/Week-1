@@ -1,10 +1,18 @@
-import { useState } from "react";
-import { Customer } from "./Types";
+import { useState} from "react";
+import { Customer} from "./Types";
 import ReuseableModal from "../Commons/ReuseableModal";
-import { Table } from "antd";
+import { Table, Button, Form, Input, Modal} from "antd";
 import "../App.css";
+import Task4 from "./Task4"; //inporting task4 component
+
 
 function Task2() {
+  // adding stste variables for isEdit and editCustomer
+  const [isEditModalOpen, setIsEditModalOpen] = useState(false); //manages edit modal visibility
+  //const [editCustomerData, setEditCustomerData] = useState<Customer | null>(null); //stores customer data to edit
+  const [editForm] = Form.useForm(); // Creates a form for editing customer data
+
+
   // Defining dummy data for customers
   let Customers = [
     {
@@ -18,8 +26,8 @@ function Task2() {
     {
       id: 2,
       name: "Nisu Mi",
-      age: 28,
-      contact: "010-234-5432",
+      age: 800,
+      contact: "060-602-9901",
       address: "PK 400 St",
       isFollowing: false,
     },
@@ -40,14 +48,20 @@ function Task2() {
       isFollowing: false,
     },
     {
-      id: 4,
+      id: 5,
       name: "Fwisu Fu",
       age: 24,
       contact: "033-099-9816",
       address: "KT 410 St",
       isFollowing: false,
     },
-  ];
+  ];  
+
+  const addCustomerToTable = (newCustomer: Customer) => {
+
+    setAllCustomers((prevCustomers) => [...prevCustomers, newCustomer]);
+  }
+
 
   // State to manage the selected customer and modal visibility
   const [selectedCustomer, setselectedCustomer] = useState<Customer | null>(
@@ -58,6 +72,8 @@ function Task2() {
 
   // Function to handle row click and open the modal
   const handleTableRowClick = (customer: Customer) => {
+    
+
     setselectedCustomer(customer);
     setOpen(true); // Shows the modal
   };
@@ -66,6 +82,52 @@ function Task2() {
   const handleCloseModal = () => {
     setOpen(false); // Hides the modal
   };
+
+//------------------------Additional self task-4------------------------------------//
+  //Function to handle customer deletion
+  const handleDelete = (id: number) => {
+
+//Filters out the customer with specified id
+    const UpdatedCustomers = allCustomers.filter((customer) => customer.id !== id);
+    setAllCustomers(UpdatedCustomers);
+  }; 
+//---Edit Info--- | --Task-4--//
+  const handleEdit = (id: number) => {
+    
+    const customerToEdit = allCustomers.find((customer) => customer.id === id);
+  
+    if (customerToEdit) {
+      //setEditCustomerData(customerToEdit); // Stores customer data to edit
+      editForm.setFieldsValue(customerToEdit)
+      setIsEditModalOpen(true); // Opens edit modal
+    }
+  };
+
+  const closeEditModal = () => {
+    setIsEditModalOpen(false); //closes
+  };
+  
+  const handleSaveEdit = (values: Customer) => {
+    console.log("values", values)
+    setIsEditModalOpen(false); // Closess the modal after saving
+    setAllCustomers((prevCustomers) =>
+    prevCustomers.map((customer) =>
+      customer.id === values.id ? { ...customer, ...values } : customer
+    )
+  );
+  };
+
+//Creating a state ti manage the customer modal visibility
+  const [isCreateCustomerModalOpen, setIsCreateCustomerModalOpen] = useState(false);
+
+  const openCreateCustomerModal = () => {
+    setIsCreateCustomerModalOpen(true);
+  };
+
+  const closeCreateCustomerModal = () => {
+    setIsCreateCustomerModalOpen(false);
+  };
+
 
   // Columns for the Antd Table
   const columns = [
@@ -87,14 +149,62 @@ function Task2() {
     {
       title: "Address",
       dataIndex: "address",
-      key: "address",
+      key: "address",   
     },
-    {
-      title: "Address",
-      dataIndex: "address",
-      key: "address",
-    },
+
+    //Delet action 
+      {
+        title: "Actions",
+      key: "action",
+      render: (record: Customer) => {
+        
+          return (
+            <span>
+              
+              <a
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleEdit(record.id)}}
+                  
+                style={{
+                  color: "#564c4d",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  transition: "color 0.3s",
+                }}
+              >Edit Customer
+              </a>
+
+              <a
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleDelete(record.id)}}
+                style={{
+                  color: "black",
+                  textDecoration: "underline",
+                  cursor: "pointer",
+                  transition: "color 0.3s",
+                  marginLeft: 15,
+                }}
+                >Delete Customer</a>
+
+              </span>
+            );
+        },
+      },
   ];
+
+    //Task-4
+    interface FormData {
+      name: string;
+      age: number;
+      contact: string;
+      address: string;
+    };
+  
+    const handleTask4FormSubmit = (data: FormData) => {
+  
+    }; 
 
   const handleFollowChange = (id: number) => {
     const updatedCustomer = allCustomers.map((value) => {
@@ -113,11 +223,14 @@ function Task2() {
         <h1>CUSTOMER PROFILE</h1>
       </b>
       <Table
+
         columns={columns}
         dataSource={allCustomers}
-        onRow={(record) => ({
+        pagination={false}
+        onRow={(record: Customer) => ({
           onClick: () => handleTableRowClick(record),
         })}
+        className="tbl-content"
       />
       {selectedCustomer && (
         <ReuseableModal
@@ -127,6 +240,53 @@ function Task2() {
           onCancel={handleCloseModal}
         />
       )}
+
+      <Task4 
+      onFormSubmit={handleTask4FormSubmit} 
+      open={isCreateCustomerModalOpen} 
+      onCancel={closeCreateCustomerModal} 
+      addCustomerToTable={addCustomerToTable}
+      />
+
+    <Button type="primary" onClick={openCreateCustomerModal}
+      style={{backgroundColor: 'white', position:'absolute', top: 10, right: 10, color: 'black'}}
+      
+      > Create Customer</Button>
+
+      {/* Edit Customer modal */}
+      <Modal
+        title="Edit Customer"
+        open={isEditModalOpen}
+        onCancel={closeEditModal}
+        footer={[
+          <Button key="cancel" onClick={closeEditModal}>
+            Cancel
+          </Button>,
+          <Button key="save" type="primary" onClick={ (e) =>editForm.submit()}>
+            Save
+          </Button>,
+        ]}
+      >
+        <Form form={editForm} onFinish={handleSaveEdit}>
+
+          {/* Creatinngg form fields for editing customer data */}
+         <Form.Item name="id" label="Id" hidden>  {/*hides id */}
+            <Input />
+          </Form.Item>
+          <Form.Item name="name" label="Name">
+            <Input />
+          </Form.Item>
+          <Form.Item name="age" label="Age">
+            <Input />
+          </Form.Item>
+          <Form.Item name="contact" label="Contact">
+            <Input />
+          </Form.Item>
+          <Form.Item name="address" label="Address">
+            <Input />
+          </Form.Item>
+        </Form>
+      </Modal>     
     </div>
   );
 }
