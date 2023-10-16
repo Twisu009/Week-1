@@ -16,10 +16,3 @@ export interface Customer {
   address: string;
   isFollowing: boolean;
 };
-
-// export interface Customer4 {
-//   id: number;
-//   name: string;
-//   contact: string;
-//   address: string;
-// };

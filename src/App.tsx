@@ -11,7 +11,7 @@ function App() {
           <HelloReact/>
         </p>
 
-        <Task2/>
+        <Task2 />
 
     </div>
 
