@@ -1,38 +1,186 @@
-.App {
+/* Styles for the table */
+table {
+  width: 100%;
+  table-layout: fixed;
+  background-color: #363636;
+  border-spacing: 0;
+}
+
+/* Styles for the table content */
+.tbl-content {
+  height: 300px;
+  overflow-x: auto; /*adding scroll-behavior*/
+  margin-top: 0px;
+
+}
+
+/* Styles for table headers (table column headers) */
+th {
+  padding: 20px 15px;
+  text-align: left;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #000000;
+  
+}
+
+/* Styles for table cells (table content cells) */
+td {
+  padding: 18px;
+  text-align: left;
+  vertical-align: middle;
+  font-weight: normal;
+  font-size: 15px;
+  color: #f5eeee;
+}
+
+/* Background gradient for the body */
+body {
+  background-color: #363636;
+  font-family: 'Roboto', sans-serif;
+}
+
+/* Center "Customer Details" heading */
+h1 {
+  font-size: 24px;
+  color: #fff5f5;
+  text-transform: uppercase;
+  font-weight: bold;
   text-align: center;
+  margin-bottom: 60px;
+  padding-top: 60px;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Styles for the popup */
+p {
+  font-size: 18px; /* Increase font size for better readability in the modal */
+  color: #000000; /* Set text color to black for better visibility */
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+/* .create-button{
+  background-color: rgb(47, 255, 220);
+  position: absolute;
+  top: 20px;
+  right: 20px;
   color: white;
+} */
+/* Additional styles for table hover effects */
+
+thead {
+  background-color: #363636!important;
 }
 
-.App-link {
-  color: #61dafb;
+.ant-table-tbody > tr.ant-table-row:hover > td {
+  background: none !important;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+
+
+
+
+/* Task5Home.module.css */
+/* Common styles for both pages */
+.container {
+  padding: 20px;
+  margin: auto;
+  width: 60%;
+  text-align: left;
+  background-color: rgba(71, 71, 71, 0);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(68, 67, 67, 0.582);
+}
+
+/* Task5Home.module.css */
+.container h1 {
+  font-size: 24px;
+  color: #d4d4d4;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.container label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #bebebe;
+}
+
+.container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 8px;
+  background-color: transparent;
+  border: 1px solid #0bb397;
+  color: #a39c9c;
+}
+
+.container button {
+  background-color: #00e6db;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.container button:hover {
+  background-color: #0093b8;
+}
+
+/* Task5Creation */
+.Container {
+  padding: 20px;
+  margin: auto;
+  width: 60%;
+  text-align: left;
+  background-color: rgba(71, 71, 71, 0);
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(68, 67, 67, 0.582);
+}
+
+.Container h1 {
+  font-size: 24px;
+  color: #e7e0e0;
+  text-transform: uppercase;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.Container label {
+  display: block;
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #adaaaa;
+}
+
+.Container input[type="text"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  background-color: transparent;
+  border: 1px solid #0bb397;
+  color: #979797;
+}
+
+.Container button {
+  background-color: #00d7e6b0;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  font-size: 18px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.Container button:hover {
+  background-color: #13ffb8;
 }
