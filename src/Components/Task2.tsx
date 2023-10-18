@@ -1,13 +1,16 @@
-import { useState, useEffect} from "react";
+import { useState, useEffect, useContext} from "react";
 import { Customer} from "./Types";
 import ReuseableModal from "../Commons/ReuseableModal";
 import { Table, Button, Form, Input, Modal} from "antd";
 import "../App.css";
 import { useNavigate, useLocation} from "react-router-dom";
+import { ThemeContext, useTheme } from '../Components/Task7ThemeContext';
 
 
 
 const Task2 = ()  => {
+
+  //const { theme, toggleTheme } = useTheme();
 
 //Adds new customer to the table
 const location = useLocation();
@@ -21,6 +24,8 @@ useEffect(() => {
   }
 }, [newCustomer]);
 
+const theme = useContext(ThemeContext);
+console.log(theme);
 
 // Customer edit
 useEffect(() => {
@@ -155,7 +160,7 @@ useEffect(() => {
       key: "address",   
     },
 
-    //--Self Delet action 
+    //--Self Delete action 
       {
         title: "Actions",
       key: "action",
@@ -216,11 +221,11 @@ useEffect(() => {
   };
 
   return (
-    <div className="App">
 
-  <div>
-    </div>
-
+    
+    <div  style={{
+      minHeight: "100vh"
+    }}>
       
       <b>
         <h1>CUSTOMER PROFILE</h1>
@@ -298,7 +303,8 @@ useEffect(() => {
           </Form.Item>
         </Form>
       </Modal>     
-    </div>
+    </div> 
+ 
   );
       
 };

@@ -25,7 +25,9 @@ const Task5Home = () => {
       };
 
     return (
-        <div className='Container'>
+        <div className='Container' style={{
+          minHeight: "100vh"
+        }}>
           <h1>Edit Customer</h1>
           <form>
             <label>

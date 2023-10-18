@@ -233,3 +233,25 @@ thead {
   color:#0dc1a7;
   transform: scale(1.1);
 }
+
+
+/* Theme-button */
+
+.theme-button.light {
+  background-color: white;
+  color: black;
+}
+
+.theme-button.dark {
+  background-color: black;
+  color: white;
+}
+
+/* Light Theme */
+
+
+/* Dark Theme */
+.App.dark {
+  background-color: #c7c7c7dc !important; /* Dark gray or black */
+  color: rgb(46, 46, 46) !important;
+}

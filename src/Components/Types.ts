@@ -30,3 +30,10 @@ export type Task4ModalProps = {
   onCancel: () => void;
   addCustomerToTable: (newCustomer: Customer) => void;
 };
+
+export type Theme = 'light' | 'dark';
+
+export interface ThemeContextType {
+  theme: Theme;
+  toggleTheme: () => void;
+}

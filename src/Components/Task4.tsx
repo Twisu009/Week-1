@@ -37,31 +37,19 @@ const Task4: React.FC<Task4ModalProps> = ({ onFormSubmit, open, onCancel, addCus
 
   return (
     <Modal title="Create Customer" open={open} onCancel={onCancel} footer={null}>
+
       <Form form={form} onFinish={handleFormSubmit}>
-        <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}>
-          <Input />
-        </Form.Item>
-        <Form.Item name="age" label="Age" rules={[{ required: true, message: 'Please enter your age' }]}>
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="contact"
-          label="Contact"
-          rules={[{ required: true, message: 'Please enter your contact' }]}
-        >
-          <Input />
-        </Form.Item>
-        <Form.Item
-          name="address"
-          label="Address"
-          rules={[{ required: true, message: 'Please enter an address' }]}
-        >
-          <Input />
-        </Form.Item>
-        <Button type="primary" htmlType="submit" style={{ display: 'flex', justifyContent: 'flex-end' }}>
-          Create
-        </Button>
+
+        <Form.Item name="name" label="Name" rules={[{ required: true, message: 'Please enter a name' }]}><Input /></Form.Item>
+        <Form.Item name="age" label="Age" rules={[{ required: true, message: 'Please enter your age' }]}><Input /></Form.Item>
+
+        <Form.Item name="contact" label="Contact" rules={[{ required: true, message: 'Please enter your contact' }]}><Input /></Form.Item>
+        <Form.Item name="address" label="Address" rules={[{ required: true, message: 'Please enter an address' }]}><Input /></Form.Item>
+
+        <Button type="primary" htmlType="submit" style={{ display: 'flex', justifyContent: 'flex-end' }}> Create </Button>
+        
       </Form>
+
     </Modal>
   );
 };
