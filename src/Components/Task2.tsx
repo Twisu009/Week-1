@@ -4,7 +4,7 @@ import ReuseableModal from "../Commons/ReuseableModal";
 import { Table, Button, Form, Input, Modal} from "antd";
 import "../App.css";
 import { useNavigate, useLocation} from "react-router-dom";
-//import { CustomerData } from './Types';
+
 
 
 const Task2 = ()  => {
@@ -132,17 +132,6 @@ useEffect(() => {
       navigate('/customer-profiles');
     };
 
-  // Task-5 -- Function to handle submitting the new customer form
-  // const handleCreateCustomer = (values: CustomerData) => {
-  //   const newCustomer = {
-  //     id: allCustomers.length + 1, // Generates a unique ID for new customer
-  //     isFollowing: false, // Sets the default isFollowing value
-  //     ...values, // Includes the form input values  
-      
-  //   };
-  // };
-
-
   // Columns for the Antd Table
   const columns = [
     {
@@ -185,7 +174,7 @@ useEffect(() => {
                   cursor: "pointer",
                   transition: "color 0.3s",
                   marginLeft: 15,
-                  backgroundImage: 'linear-gradient(to right, #FFF8DC, #7FFFD4)',
+                  backgroundImage: 'linear-gradient(to right, #21b570, #0dc1a7)',
                   WebkitBackgroundClip: 'text',
                   color: 'transparent',
                   opacity:5
@@ -201,7 +190,7 @@ useEffect(() => {
                     cursor: "pointer",
                     transition: "color 0.3s",
                     marginLeft: 15,
-                    backgroundImage: 'linear-gradient(to right, #FFF8DC, #7FFFD4)',
+                    backgroundImage: 'linear-gradient(to right, #0dc1a7, #21b570)',
                     WebkitBackgroundClip: 'text',
                     color: 'transparent',
                     opacity:5
@@ -229,6 +218,9 @@ useEffect(() => {
   return (
     <div className="App">
 
+  <div>
+    </div>
+
       
       <b>
         <h1>CUSTOMER PROFILE</h1>
@@ -253,9 +245,37 @@ useEffect(() => {
       )}
 
     <Button type="primary" onClick={() => navigate('/create-customer')}
-      style={{backgroundColor: 'white', position:'absolute', top: 10, right: 10, color: 'black'}}
-      
-      > Create Customer</Button>
+      style={{
+        backgroundColor: 'white', 
+        position:'absolute', 
+        top: 10, 
+        right: 10, 
+        color: 'black',
+        borderColor: 'black',
+        borderWidth: '1px',
+        transition: 'background-color 0.3s'
+      }}
+
+      onMouseOver={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+      onMouseOut={(e) => e.currentTarget.style.backgroundColor = 'white'}
+
+
+    > Create Customer</Button>
+
+    <Button type="primary" onClick={() => navigate('/Counter')}
+          style={{
+            backgroundColor: 'transparent', 
+            position:'absolute', 
+            top: 10, 
+            right: 180, 
+            borderColor: 'white',
+            borderWidth: '0px',
+            transition: 'color 0.3s, borderWidth 0.3s'
+          }}
+          onMouseOver={(e) => {e.currentTarget.style.color = 'white'; e.currentTarget.style.borderWidth = '1px';}}
+          onMouseOut={(e) => {e.currentTarget.style.color = '	#A9A9A9'; e.currentTarget.style.borderWidth = '0px';}}
+        > Check Counter</Button>
+
 
       <Modal>
         <Form form={editForm} onFinish={handleSaveEdit}>

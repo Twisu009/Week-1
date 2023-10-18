@@ -1,6 +1,7 @@
 import React from 'react';
 
 const HelloReact: React.FC = () => {
+ 
     return(
         <div style={{ position: 'absolute', top: '0', left: '0' }}>
 
@@ -8,7 +9,7 @@ const HelloReact: React.FC = () => {
                 fontSize: '18px',
                 textAlign: 'left',
                 margin: '0',
-                backgroundImage: 'linear-gradient(to right, #FFF8DC, #7FFFD4)',
+                backgroundImage: 'linear-gradient(to right, #21b570, #0dc1a7)',
                 WebkitBackgroundClip: 'text',
                 color: 'transparent',
                 opacity:5

@@ -21,11 +21,11 @@ const Task5Home = () => {
     };
     const handleSaveEdit = () => {
     
-        navigate('/', { state: {  editedCustomer } });
+        navigate('/', { state: {  editedCustomer },  });
       };
 
     return (
-        <div className={'Container'}>
+        <div className='Container'>
           <h1>Edit Customer</h1>
           <form>
             <label>
@@ -64,10 +64,16 @@ const Task5Home = () => {
                     onChange={handleInputChange}
                 />
                 </label>
-            
-                <button type="button" onClick={handleSaveEdit}>
+                
+                <div className="saveButton" style={{ display: 'flex', justifyContent: 'space-between' }}>
+              <button type="button" onClick={handleSaveEdit}>
                 Save
-                </button>
+              </button>
+              <a className="goBack" type="primary" onClick={() => navigate('/')}>
+                &#x21E6; Go Back
+              </a>
+            </div>      
+                
             </form>
             </div>
       );

@@ -67,9 +67,17 @@ const Task5Creation = () => {
             onChange={handleInputChange}
           />
         </label>
+
+        <div className="saveButton" style={{ display: 'flex', justifyContent: 'space-between' }}>
         <button type="button" onClick={handleCreateCustomer}>
           Create
         </button>
+
+        <a className="goBack" type="primary" onClick={() => navigate('/')}>
+        &#x21E6; Go Back</a>
+
+        </div>
+
       </form>
     </div>
   );
